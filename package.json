@@ -9,7 +9,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "test": "node survey/server.js"
+    "test": "node server.js"
   },
   "repository": {
     "type": "git",
