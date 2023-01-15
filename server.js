@@ -11,7 +11,12 @@ mongoose.connect(process.env['url'], { useNewUrlParser: true });
 
 const resultSchema = {
     title: String,
-    content: String,
+    has_phobia: String,
+    image_1: String,
+    image_2: String,
+    image_3: String,
+    image_4: String,
+    image_5: String,
 }
 
 const results = mongoose.model("Results", resultSchema);
@@ -25,7 +30,12 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
     let newResult = new results ({
         title: req.body.survey,
-        content: req.body.question_1
+        has_phobia: req.body.has_phobia,
+        image_1: req.body.image_1,
+        image_2: req.body.image_2,
+        image_3: req.body.image_3,
+        image_4: req.body.image_4,
+        image_5: req.body.image_5
     });
     newResult.save();
     console.log('Saved')

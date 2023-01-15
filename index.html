@@ -18,7 +18,7 @@
     body,h1 {font-family: "Raleway", sans-serif}
     body, html {height: 100%}
     body{
-        background-image: url(/images/pastelpinkbg.png);
+        background-image: url(https://htmlcolorcodes.com/assets/images/colors/pastel-pink-color-solid-background-1920x1080.png);
         min-height: 100%;
         background-position: center;
         background-size: cover;
@@ -27,14 +27,52 @@
     </style>
 </head>
 <body>
-<form name="survey" id="survey" method="post" action="/">
+    <form name="survey" id="survey" method="post" action="/">
      <div>
-        <p>test</p>
-        <p><input type="radio" name="question_1" value="test1">A. test1</p>
-        <p><input type="radio" name="question_1" value="test2">B. test2</p>
-        <p><input type="radio" name="question_1" value="test3">C. test3</p>
-        <p><input type="radio" name="question_1" value="test4">D. test4</p>
-       <button> Finished. </button>
+        <h1> Please note that none of the questions or images presented should be used as an actual diagnosis for nyctophobia, if you think you have nyctophobia please consult a professional.</h1>
+        <p> Have you ever been clinically diagnosed with nyctophobia? </p>
+        <p><input type="radio" name="has_phobia" value="Y">Yes</p>
+        <p><input type="radio" name="has_phobia" value="N">No</p>
+        
+        <h2> You will be now asked to rate the images presented below. Please rate them according to how uncomfertable they make you feel. 1 being feeling severe discomfort and 5 being unaffected by the image.</h2>
+        
+        <img src="https://www.publicdomainpictures.net/pictures/30000/velka/sunny-day.jpg">
+        <p><input type="radio" name="image_1" value="1"> 1 - I feel very uncomfertable. </p>
+        <p><input type="radio" name="image_1" value="2"> 2 - I feel uncomfertable. </p>
+        <p><input type="radio" name="image_1" value="3"> 3 - I feel slightly uncomfertable. </p>
+        <p><input type="radio" name="image_1" value="4"> 4 - Neutral. </p>
+        <p><input type="radio" name="image_1" value="5"> 5 - I am comfortable with this image. </p>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/800px-Sunset_2007-1.jpg?20071008074714">
+        <p><input type="radio" name="image_2" value="1"> 1 - I feel very uncomfertable. </p>
+        <p><input type="radio" name="image_2" value="2"> 2 - I feel uncomfertable. </p>
+        <p><input type="radio" name="image_2" value="3"> 3 - I feel slightly uncomfertable. </p>
+        <p><input type="radio" name="image_2" value="4"> 4 - Neutral. </p>
+        <p><input type="radio" name="image_2" value="5"> 5 - I am comfortable with this image. </p>
+        
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSLwMIwVGeBSOPGOc_ma1MQbCS6jX92_BfJF7SJxVxueG_hN_r2">
+        <p><input type="radio" name="image_3" value="1"> 1 - I feel very uncomfertable. </p>
+        <p><input type="radio" name="image_3" value="2"> 2 - I feel uncomfertable. </p>
+        <p><input type="radio" name="image_3" value="3"> 3 - I feel slightly uncomfertable. </p>
+        <p><input type="radio" name="image_3" value="4"> 4 - Neutral. </p>
+        <p><input type="radio" name="image_3" value="5"> 5 - I am comfortable with this image. </p>
+        
+        <img src="https://i0.hippopx.com/photos/968/870/445/dark-room-window-light-preview.jpg">
+        <p><input type="radio" name="image_4" value="1"> 1 - I feel very uncomfertable. </p>
+        <p><input type="radio" name="image_4" value="2"> 2 - I feel uncomfertable. </p>
+        <p><input type="radio" name="image_4" value="3"> 3 - I feel slightly uncomfertable. </p>
+        <p><input type="radio" name="image_4" value="4"> 4 - Neutral. </p>
+        <p><input type="radio" name="image_4" value="5"> 5 - I am comfortable with this image. </p>
+       
+        <img src="https://i0.hippopx.com/photos/818/684/958/dark-light-tunnel-preview.jpg">
+        <p><input type="radio" name="image_5" value="1"> 1 - I feel very uncomfertable. </p>
+        <p><input type="radio" name="image_5" value="2"> 2 - I feel uncomfertable. </p>
+        <p><input type="radio" name="image_5" value="3"> 3 - I feel slightly uncomfertable. </p>
+        <p><input type="radio" name="image_5" value="4"> 4 - Neutral </p>
+        <p><input type="radio" name="image_5" value="5"> 5 - I am comfortable with this image. </p>
+
+        
+        <button> I'm done! </button>
         
      </div>
 </form>
