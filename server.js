@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 mongoose.set('strictQuery', false);
-/*
+
 require('dotenv').config();
 mongoose.connect(process.env['url'], { useNewUrlParser: true });
-*/
-mongoose.connect('mongodb+srv://nyctodetect:nyctophobia365@nyctosurvey.kqpot9l.mongodb.net/test78164751', { useNewUrlParser: true });
 
 
 const resultSchema = {
