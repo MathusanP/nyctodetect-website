@@ -5,10 +5,11 @@ const bodyParser = require('body-parser');
 
 mongoose.set('strictQuery', false);
 
+// Connecting to the database, the url is a secret, so we use a env variable which we'll assign the value to the hosting site.
 require('dotenv').config();
 mongoose.connect(process.env['url'], { useNewUrlParser: true });
 
-
+// Our schema structures our data
 const resultSchema = {
     title: String,
     has_phobia: String,
@@ -21,12 +22,15 @@ const resultSchema = {
 
 const results = mongoose.model("Results", resultSchema);
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Express server pushes the index.html file to the user
 app.get("/", function(req, res) {
     res.sendFile('index.html', { root: __dirname });
 }) 
 
+// Sending the user input to the mongodb database
 app.post("/", function(req, res) {
     let newResult = new results ({
         title: req.body.survey,
@@ -41,7 +45,7 @@ app.post("/", function(req, res) {
     console.log('Saved')
 })
 
-
+// We use an express server to keep this script alive, routed to port 3000. 
 app.listen(3000, function(){
     console.log("Server is on.");
 })
