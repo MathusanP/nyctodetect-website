@@ -3,3 +3,112 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Ubuntu', sans-serif;}
 .display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+
+.header {
+  background-color: rgb(241, 65, 165);
+  width: 100%;
+  height: 12%;
+}
+
+body {
+	margin: 0;
+  background-color: rgb(241, 65, 165);
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: #f911a0;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #000000;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.descbox {
+  width: 500px;
+  border: 10px solid palevioletred;
+  background-color:rgb(216, 108, 153);
+  padding: 20px;
+  margin: 20px;
+}
+
+.expbox {
+  width: 500px;
+  border: 10px solid palevioletred;
+  background-color:rgb(216, 108, 153);
+  padding: 20px;
+  margin: 20px;
+}
+
+.descbox h2 {
+  text-align: center;
+  vertical-align: text-top;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(246, 111, 163);
+  text-align: center;
+}
