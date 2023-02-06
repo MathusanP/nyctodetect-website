@@ -6,8 +6,10 @@ const bodyParser = require('body-parser');
 mongoose.set('strictQuery', false);
 
 // Connecting to the database, the url is a secret, so we use a env variable which we'll assign the value to the hosting site.
+
 require('dotenv').config();
-mongoose.connect(process.env['url'], { useNewUrlParser: true });
+mongoose.connect(process.env['url_2'], { useNewUrlParser: true });
+
 
 // Our schema structures our data
 const resultSchema = {
