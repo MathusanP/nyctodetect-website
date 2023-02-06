@@ -96,7 +96,7 @@ nav a:hover::before {
 
 nav h1 {
   position: relative;
-  right: 930px;
+  right: 50vw;
   color: #ffffff;
   font-size: 50px;
 }
