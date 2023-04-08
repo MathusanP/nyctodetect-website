@@ -33,7 +33,6 @@ body {
 
 header {
   background: #000000;
-
 }
 
 
@@ -44,8 +43,10 @@ header::after {
 }
 
 .logo {
-  float: left;
-  padding: 10px 0;
+  margin-right: 70vw;
+  padding: 20px 0;
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 50px);
 }
 
 nav {
@@ -60,7 +61,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 70px;
+  margin-left: clamp(12px, 3vw, 70px);
   padding-top: 23px;
 
   position: relative;
@@ -70,7 +71,7 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: clamp(9px, 2.5vw, 18px);
 }
 
 nav a:hover {
@@ -92,13 +93,6 @@ nav a::before {
 
 nav a:hover::before {
   width: 100%;
-}
-
-nav h1 {
-  position: relative;
-  right: 50vw;
-  color: #ffffff;
-  font-size: 50px;
 }
 
 .descbox {
@@ -155,7 +149,7 @@ body {
 
 @media (max-width: 700px) {
   .wrapper {
-    margin: 200px auto;
+    margin: 40px auto;
   }
 }
 
@@ -185,7 +179,13 @@ body {
   font-size: 65px;
 }
 
-.box .front-face span,
+.box .front-face span {
+  transform: translate(0, -100%);
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .box .back-face span {
   font-size: 22px;
   font-weight: 600;
