@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Nyctodetect" content="Survey for nyctophobia">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,7 +15,7 @@
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style> @import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300&family=Poppins:ital,wght@0,400;1,300&family=Raleway:wght@300;500&family=Ubuntu&display=swap'); </style>
-    <title> Nyctodetect </title>
+    <title> Survey </title>
     <style>
     body,h1 {font-family: "Raleway", sans-serif}
     body, html {height: 100%}
@@ -30,57 +32,74 @@
     <!-- Opening a connection between the mongodb database and the index.html site using an express server-->
     <header>
         <div class="container">
-            <h1 class="logo"></h1>
+            <h1 class="logo">Nyctodetect</h1>
         </div>
-    </header>   
-        <form name="survey" id="survey" method="post" action="/">
-     <div>
-        <h1> Please note that none of the questions or images presented should be used as an actual diagnosis for nyctophobia, if you think you have nyctophobia please consult a professional.</h1>
-        <p> Have you ever been clinically diagnosed with nyctophobia? </p>
-        <p><input type="radio" name="has_phobia" value="Y">Yes</p>
-        <p><input type="radio" name="has_phobia" value="N">No</p>
-        
-        <h2> You will be now asked to rate the images presented below. Please rate them according to how uncomfertable they make you feel. 1 being feeling severe discomfort and 5 being unaffected by the image.</h2>
-        
-        <img src="https://live.staticflickr.com/153/382125474_21ec5bbaca_b.jpg">
-        <p><input type="radio" name="image_1" value="1"> 1 - Severe Discomfort </p>
-        <p><input type="radio" name="image_1" value="2"> 2 - Slight discomfort  </p>
-        <p><input type="radio" name="image_1" value="3"> 3 - Neutral </p>
-        <p><input type="radio" name="image_1" value="4"> 4 - Comfortable </p>
-        <p><input type="radio" name="image_1" value="5"> 5 - Very comfortable </p>
+    </header> 
+    <br> 
+    <form name="survey" id="survey" method="post" action="/"> 
 
-        <img src="https://live.staticflickr.com/4091/5081331858_0ee3a3b8d5_b.jpg">
-        <p><input type="radio" name="image_2" value="1"> 1 - Severe Discomfort </p> 
-        <p><input type="radio" name="image_2" value="2"> 2 - Slight discomfort  </p>
-        <p><input type="radio" name="image_2" value="3"> 3 - Neutral </p>
-        <p><input type="radio" name="image_2" value="4"> 4 - Comfortable </p>
-        <p><input type="radio" name="image_2" value="5"> 5 - Very comfortable </p>
-        
-        <img src="https://t4.ftcdn.net/jpg/04/37/23/79/360_F_437237957_0jO8aqaGOQuF5YlA53u0dWVFoCw4FOr5.jpg">
-        <p><input type="radio" name="image_3" value="1"> 1 - Severe Discomfort </p>
-        <p><input type="radio" name="image_3" value="2"> 2 - Slight discomfort  </p>
-        <p><input type="radio" name="image_3" value="3"> 3 - Neutral </p>
-        <p><input type="radio" name="image_3" value="4"> 4 - Comfortable </p>
-        <p><input type="radio" name="image_3" value="5"> 5 - Very comfortable </p>
-        
-        <img src="https://c.pxhere.com/photos/b4/9b/bottle_chair_dark_desk_drink_furniture_home_indoors-1499773.jpg!d">
-        <p><input type="radio" name="image_4" value="1"> 1 - Severe Discomfort </p>
-        <p><input type="radio" name="image_4" value="2"> 2 - Slight discomfort  </p>
-        <p><input type="radio" name="image_4" value="3"> 3 - Neutral </p>
-        <p><input type="radio" name="image_4" value="4"> 4 - Comfortable </p>
-        <p><input type="radio" name="image_4" value="5"> 5 - Very comfortable </p>
-       
-        <img src="https://t4.ftcdn.net/jpg/04/92/22/93/360_F_492229389_5ve1bCKgYrLRHpCj3o4FAzz60efaZgG0.jpg">
-        <p><input type="radio" name="image_5" value="1"> 1 - Severe Discomfort </p>
-        <p><input type="radio" name="image_5" value="2"> 2 - Slight discomfort  </p>
-        <p><input type="radio" name="image_5" value="3"> 3 - Neutral </p>
-        <p><input type="radio" name="image_5" value="4"> 4 - Comfortable </p>
-        <p><input type="radio" name="image_5" value="5"> 5 - Very comfortable </p>
+    <div id="container">
+        <div id="popup">
+            <h1> Please note that none of the questions or images presented should be used as a diagnosis for nyctophobia; If you think you have nyctophobia, please consult a professional.</h1>
+            <button type="button" id="remove" onclick="removePopup()">I understand.</button>
+        </div>
+    </div>
 
-        
+        <div class="form">
+        <br>
+            <div class="">
+                <p> Have you been clinically diagnosed with nyctophobia? </p>
+                <p><input type="radio" name="has_phobia" value="Y">Yes</p>
+                <p><input type="radio" name="has_phobia" value="N">No</p>
+            </div>
+            <hr>
+            <h2 style="font-size: clamp(14px, 2.5vw, 24px)"> You will now be asked to rate the images presented below.<br> Please rate them according to how uncomfortable they make you feel. <br>1 being feeling severe discomfort, <br>5 being unaffected by the image.</h2>
+            
+            <img class="center" src="https://live.staticflickr.com/153/382125474_21ec5bbaca_b.jpg" >
+            <div class="container">
+                <p><input type="radio" name="image_1" value="1"> 1 - Severe Discomfort </p>
+                <p><input type="radio" name="image_1" value="2"> 2 - Slight Discomfort  </p>
+                <p><input type="radio" name="image_1" value="3"> 3 - Neutral </p>
+                <p><input type="radio" name="image_1" value="4"> 4 - Comfortable </p>
+                <p><input type="radio" name="image_1" value="5"> 5 - Very Comfortable </p>
+            </div>
+
+                <hr>
+                <img class="center" src="https://live.staticflickr.com/4091/5081331858_0ee3a3b8d5_b.jpg">
+                <p><input type="radio" name="image_2" value="1"> 1 - Severe Discomfort </p> 
+                <p><input type="radio" name="image_2" value="2"> 2 - Slight Discomfort  </p>
+                <p><input type="radio" name="image_2" value="3"> 3 - Neutral </p>
+                <p><input type="radio" name="image_2" value="4"> 4 - Comfortable </p>
+                <p><input type="radio" name="image_2" value="5"> 5 - Very Comfortable </p>
+                
+                <hr>
+                <img class="center" src="https://t4.ftcdn.net/jpg/04/37/23/79/360_F_437237957_0jO8aqaGOQuF5YlA53u0dWVFoCw4FOr5.jpg">
+                <p><input type="radio" name="image_3" value="1"> 1 - Severe Discomfort </p>
+                <p><input type="radio" name="image_3" value="2"> 2 - Slight Discomfort  </p>
+                <p><input type="radio" name="image_3" value="3"> 3 - Neutral </p>
+                <p><input type="radio" name="image_3" value="4"> 4 - Comfortable </p>
+                <p><input type="radio" name="image_3" value="5"> 5 - Very Comfortable </p>
+                
+                <hr>
+                <img class="center" src="https://c.pxhere.com/photos/b4/9b/bottle_chair_dark_desk_drink_furniture_home_indoors-1499773.jpg!d">
+                <p><input type="radio" name="image_4" value="1"> 1 - Severe Discomfort </p>
+                <p><input type="radio" name="image_4" value="2"> 2 - Slight Discomfort  </p>
+                <p><input type="radio" name="image_4" value="3"> 3 - Neutral </p>
+                <p><input type="radio" name="image_4" value="4"> 4 - Comfortable </p>
+                <p><input type="radio" name="image_4" value="5"> 5 - Very Comfortable </p>
+            
+                <hr>
+                <img class="center" src="https://t4.ftcdn.net/jpg/04/92/22/93/360_F_492229389_5ve1bCKgYrLRHpCj3o4FAzz60efaZgG0.jpg">
+                <p><input type="radio" name="image_5" value="1"> 1 - Severe Discomfort </p>
+                <p><input type="radio" name="image_5" value="2"> 2 - Slight Discomfort  </p>
+                <p><input type="radio" name="image_5" value="3"> 3 - Neutral </p>
+                <p><input type="radio" name="image_5" value="4"> 4 - Comfortable </p>
+                <p><input type="radio" name="image_5" value="5"> 5 - Very Comfortable </p>
+            <hr>
         <button> I'm done! </button>
         
-     </div>
-</form>
+        </div>
+    </form>
 </body>
+
 </html>
