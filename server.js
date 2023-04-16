@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 mongoose.set('strictQuery', false);
-
 // Connecting to the database, the url is a secret, so we use a env variable which we'll assign the value to the hosting site.
 
 require('dotenv').config();
 mongoose.connect(process.env['url_2'], { useNewUrlParser: true });
+
 
 
 // Our schema structures our data
@@ -27,9 +27,11 @@ const results = mongoose.model("Results", resultSchema);
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 // Express server pushes the index.html file to the user
 app.get("/", function(req, res) {
     res.sendFile('index.html', { root: __dirname });
+    app.use(express.static(__dirname + '/public'));
 }) 
 
 // Sending the user input to the mongodb database
