@@ -9,9 +9,7 @@ mongoose.set('strictQuery', false);
 require('dotenv').config();
 mongoose.connect(process.env['url_2'], { useNewUrlParser: true });
 
-
-
-// Our schema structures our data
+// Our schema structures our data 
 const resultSchema = {
     title: String,
     has_phobia: String,
