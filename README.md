@@ -10,4 +10,4 @@ This project allows us to collect data for Nyctophobia. In our survey, we ask us
 - `Master` branch contains the main site code.
 - `development` branch contains the code in development for the next phase/update.
 - `survey` branch contains the source code for the server and survey site. 
-
+- `TM` branch contains the Teachable Machine AI model.
