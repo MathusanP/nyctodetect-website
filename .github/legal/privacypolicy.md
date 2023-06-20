@@ -12,8 +12,8 @@ We use Your Personal data to provide and improve the Service. By using the Servi
 - Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - Service refers to the Website.
 - Service Provider means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.
-- Website refers to Nyctodetect, accessible from https://elegant-dusk-92f4e6.netlify.app or https://musicorum-weirdmathu12345.koyeb.app/
-- You You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+- Website refers to Nyctodetect, accessible from https://nyctodetect.co.uk (https://elegant-dusk-92f4e6.netlify.app) or https://survey.nyctodetec.co.uk (https://musicorum-weirdmathu12345.koyeb.app/) or https://test.nyctodetect.co.uk
+- You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
 # Collecting and Using Your Personal Data
 
